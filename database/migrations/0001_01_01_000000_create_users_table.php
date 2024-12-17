@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->foreignUuid('user_type_id')->references('id')->on('user_types')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignUuid('designation_id')->references('id')->on('designations')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignUuid('document_id')->references('id')->on('documents')->onUpdate('cascade')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
