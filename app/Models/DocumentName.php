@@ -6,11 +6,9 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class Designation extends Model
+class DocumentName extends Model
 {
     use HasUuids;
-
-
 
 
     protected $keyType = 'string';
