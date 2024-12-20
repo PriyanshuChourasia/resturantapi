@@ -2,10 +2,10 @@
 
 namespace App\Http\Resources\Designation;
 
+use App\Http\Resources\ResponseResource\ResponseCollection;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class DesignationCollection extends ResourceCollection
+class DesignationCollection extends ResponseCollection
 {
     /**
      * Transform the resource collection into an array.

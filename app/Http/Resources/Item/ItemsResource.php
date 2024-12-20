@@ -2,10 +2,10 @@
 
 namespace App\Http\Resources\Item;
 
+use App\Http\Resources\ResponseResource\ResponseResource;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
 
-class ItemsResource extends JsonResource
+class ItemsResource extends ResponseResource
 {
     /**
      * Transform the resource into an array.

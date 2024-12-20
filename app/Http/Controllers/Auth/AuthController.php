@@ -15,4 +15,6 @@ class AuthController extends Controller
             'status' => true
         ]);
     }
+
+    public function register() {}
 }
