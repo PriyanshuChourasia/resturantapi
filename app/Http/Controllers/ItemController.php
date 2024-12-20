@@ -2,16 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\IItemService;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
+
+    protected $itemService;
+
+    public function __construct(IItemService $itemService)
+    {
+        $this->itemService = $itemService;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return $this->itemService->getAll();
     }
 
     /**

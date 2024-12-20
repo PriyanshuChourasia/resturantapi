@@ -2,15 +2,15 @@
 
 namespace App\Http\Resources\Item;
 
-use App\Http\Resources\ResponseResource\ResponseResource;
+use App\Http\Resources\ResponseResource\ResponseCollection;
 use Illuminate\Http\Request;
 
-class ItemsResource extends ResponseResource
+class ItemCollection extends ResponseCollection
 {
     /**
-     * Transform the resource into an array.
+     * Transform the resource collection into an array.
      *
-     * @return array<string, mixed>
+     * @return array<int|string, mixed>
      */
     public function toArray(Request $request): array
     {

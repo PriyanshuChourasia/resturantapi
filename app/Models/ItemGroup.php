@@ -17,6 +17,17 @@ class ItemGroup extends Model
         'alias',
     ];
 
+    public function parent()
+    {
+        $this->belongsTo(ItemGroup::class);
+    }
+
+
+    public function children()
+    {
+        $this->hasMany(ItemGroup::class, 'parent_id');
+    }
+
     protected $keyType = 'string';
     public $incrementing = false;
 

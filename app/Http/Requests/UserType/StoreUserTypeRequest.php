@@ -22,7 +22,7 @@ class StoreUserTypeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['string', 'required', 'unique:user_types,name']
         ];
     }
 }

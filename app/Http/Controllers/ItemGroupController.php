@@ -2,25 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ItemGroup\ItemGroupStoreRequest;
 use App\Models\ItemGroup;
+use App\Services\IItemGroupService;
 use Illuminate\Http\Request;
 
 class ItemGroupController extends Controller
 {
+
+    protected $itemGroupService;
+    public function __construct(IItemGroupService $itemGroupService)
+    {
+        $this->itemGroupService = $itemGroupService;
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return $this->itemGroupService->getAll();
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ItemGroupStoreRequest $request)
     {
-        //
+        return $this->itemGroupService->store($request);
     }
 
     /**

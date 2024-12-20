@@ -19,10 +19,10 @@ class ResponseCollection extends ResourceCollection
 
     public function with(Request $request): array
     {
-        $count = count($this) > 0 ? 'Records Fetced' : 'Record Fetched';
+        $count = count($this) > 1 ? 'Records Fetched' : 'Record Fetched';
         return [
             'success' => true,
-            'status' => count($this) . $count,
+            'status' => count($this) . ' ' . $count,
             'code' => 0
         ];
     }

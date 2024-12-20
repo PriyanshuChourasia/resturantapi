@@ -12,7 +12,6 @@ class Item extends Model
     use HasUuids, SoftDeletes;
 
     protected $fillable = [
-        'item_id',
         'name',
         'cost_price',
         'mrp',
