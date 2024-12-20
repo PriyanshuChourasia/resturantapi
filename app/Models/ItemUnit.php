@@ -11,6 +11,11 @@ class ItemUnit extends Model
 {
     use HasUuids, SoftDeletes;
 
+    protected $fillable = [
+        'name',
+        'alias',
+    ];
+
 
     protected $keyType = 'string';
     public $incrementing = false;

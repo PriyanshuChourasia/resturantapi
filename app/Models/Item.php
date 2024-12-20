@@ -11,6 +11,19 @@ class Item extends Model
 {
     use HasUuids, SoftDeletes;
 
+    protected $fillable = [
+        'item_id',
+        'name',
+        'cost_price',
+        'mrp',
+        'unit_ratio',
+        'alias',
+        'item_unit_id',
+        'alt_unit_id',
+        'item_groups_id',
+        'item_categories_id',
+    ];
+
 
     protected $keyType = 'string';
     public $incrementing = false;

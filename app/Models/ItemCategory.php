@@ -11,6 +11,12 @@ class ItemCategory extends Model
 {
     use HasUuids, SoftDeletes;
 
+    protected $fillable = [
+        'name',
+        'parent_id',
+        'alias',
+    ];
+
 
     protected $keyType = 'string';
     public $incrementing = false;
