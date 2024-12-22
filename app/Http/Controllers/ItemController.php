@@ -27,7 +27,7 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->itemService->store($request);
     }
 
     /**
@@ -35,7 +35,7 @@ class ItemController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $this->itemService->getById($id);
     }
 
     /**
@@ -43,7 +43,7 @@ class ItemController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->itemService->update($request, $id);
     }
 
     /**
@@ -51,6 +51,6 @@ class ItemController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->itemService->delete($id);
     }
 }

@@ -17,15 +17,17 @@ class ItemCategoryService implements IItemCategoryService
 {
 
 
+    protected $categoryLoader = ['parent'];
     function getAll()
     {
-        return new ItemCategoryCollection(ItemCategory::all());
+        return new ItemCategoryCollection(ItemCategory::with($this->categoryLoader)->get());
     }
 
 
     function getById(string $id)
     {
-        return new ItemCategoryResource($id);
+        $data = ItemCategory::with($this->categoryLoader)->findOrFail($id);
+        return new ItemCategoryResource($data);
     }
 
 
@@ -42,7 +44,7 @@ class ItemCategoryService implements IItemCategoryService
     {
         try {
             $data = $request->validated();
-            $itemCategory = ItemCategory::findOrFail($id);
+            $itemCategory = ItemCategory::with($this->categoryLoader)->findOrFail($id);
             $itemCategory->update($data);
             return new ItemCategoryResource($itemCategory);
         } catch (Exception $e) {
