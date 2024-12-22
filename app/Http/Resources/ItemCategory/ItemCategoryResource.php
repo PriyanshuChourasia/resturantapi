@@ -14,6 +14,11 @@ class ItemCategoryResource extends ResponseResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'name' => $this->name,
+            'parentId' => $this->parent_id,
+            'parent' => new ItemCategoryResource($this->whenLoaded('parent')),
+            'alias' => $this->alias
+        ];
     }
 }

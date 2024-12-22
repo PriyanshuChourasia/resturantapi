@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ItemGroup\ItemGroupStoreRequest;
+use App\Http\Requests\ItemGroup\ItemGroupUpdateRequest;
 use App\Models\ItemGroup;
 use App\Services\IItemGroupService;
 use Illuminate\Http\Request;
@@ -35,24 +36,24 @@ class ItemGroupController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ItemGroup $itemGroup)
+    public function show(string $id)
     {
-        //
+        return $this->itemGroupService->getById($id);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ItemGroup $itemGroup)
+    public function update(ItemGroupUpdateRequest $request, string $id)
     {
-        //
+        return $this->itemGroupService->update($request, $id);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ItemGroup $itemGroup)
+    public function destroy(string $id)
     {
-        //
+        return $this->itemGroupService->delete($id);
     }
 }
